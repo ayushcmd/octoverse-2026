@@ -283,6 +283,8 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  min-width: 0;
+  max-width: 100%;
   transition: border-color var(--transition-fast);
 }
 
@@ -324,8 +326,11 @@
 
 .chart-canvas {
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
   min-height: 320px;
   position: relative;
+  overflow: hidden;
 }
 
 .chart-canvas.tall {

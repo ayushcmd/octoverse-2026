@@ -608,6 +608,15 @@
   gap: var(--space-6);
 }
 
+/* Ensure grid items can shrink below content width to eliminate horizontal overflow */
+.grid-2 > *,
+.grid-3 > *,
+.grid-4 > *,
+.grid-asymmetric > *,
+.analytics-kpi-bar > * {
+  min-width: 0;
+}
+
 /* Analytics KPI Strip (4 connected cards with fine borders) */
 .analytics-kpi-bar {
   display: grid;
@@ -631,6 +640,58 @@
   margin-top: auto;
   font-size: var(--text-xs);
   color: var(--text-secondary);
+}
+
+.footer-disclaimer-box {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-left: 3px solid var(--color-blue);
+  border-radius: var(--radius-md);
+  padding: var(--space-4) var(--space-5);
+  margin-bottom: var(--space-8);
+}
+
+.footer-disclaimer-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+  color: var(--text-primary);
+  font-size: var(--text-xs);
+  font-weight: var(--font-semibold);
+}
+
+.footer-disclaimer-text {
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.footer-about-details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  font-size: var(--text-xs);
+  line-height: var(--leading-normal);
+  color: var(--text-secondary);
+}
+
+.footer-about-details p {
+  margin: 0;
+}
+
+.footer-about-details strong {
+  color: var(--text-primary);
+}
+
+.footer-about-details a {
+  color: var(--color-blue);
+  text-decoration: none;
+}
+
+.footer-about-details a:hover {
+  text-decoration: underline;
 }
 
 .footer-top {
