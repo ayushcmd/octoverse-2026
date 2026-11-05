@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="github-dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Official GitHub Octoverse 2026 Report interactive dashboard. Canonical statistics, telemetry charts, model diversity, global demographics, and open-source rankings.">
+  <title>GitHub Octoverse 2026 — Interactive Report Dashboard</title>
+
+  <!-- Prevent flash of unstyled theme (FOUT) -->
+  <script>
+    (function() {
+      try {
+        const storedTheme = localStorage.getItem('github-octoverse-theme');
+        if (storedTheme === 'github-dark' || storedTheme === 'github-light') {
+          document.documentElement.setAttribute('data-theme', storedTheme);
+          document.documentElement.style.colorScheme = storedTheme === 'github-dark' ? 'dark' : 'light';
+        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+          document.documentElement.setAttribute('data-theme', 'github-light');
+          document.documentElement.style.colorScheme = 'light';
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Design System & Stylesheets -->
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/sections.css">
+
+  <!-- Version-Pinned Core Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.344.0/dist/umd/lucide.min.js"></script>
+
+  <!-- Application Module Entry Point -->
+  <script type="module" src="assets/js/app.js"></script>
+</head>
+<body>
+  <!-- Accessible Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Global Sticky Glass Navigation Header -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a href="#" class="header-brand" aria-label="GitHub Octoverse 2026 Home">
+        <svg class="brand-icon" viewBox="0 0 98 96" width="22" height="22" aria-hidden="true">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="currentColor"/>
+        </svg>
+        <span>Octoverse 2026</span>
+        <span class="brand-badge">Official Report</span>
+      </a>
+
+      <!-- Desktop Primary Navigation -->
+      <nav class="site-nav" aria-label="Report chapters">
+        <a href="#momentum" class="nav-link active">1. Momentum</a>
+        <a href="#geography" class="nav-link">2. Geography</a>
+        <a href="#industries" class="nav-link">3. Industries</a>
+        <a href="#workflow" class="nav-link">4. Workflows</a>
+        <a href="#models" class="nav-link">5. Model Choice</a>
+        <a href="#languages" class="nav-link">6. Languages</a>
+        <a href="#opensource" class="nav-link">7. Open Source</a>
+      </nav>
+
+      <!-- Utilities: Theme Switcher & Mobile Menu Button -->
+      <div class="header-actions">
+        <button type="button" class="theme-toggle-btn" aria-label="Switch theme" title="Switch theme">
+          <svg class="theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <button type="button" class="mobile-nav-toggle" aria-label="Open menu" aria-expanded="false">
+          <i data-lucide="menu" style="width: 18px; height: 18px;"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    <nav class="mobile-nav-list">
+      <a href="#momentum" class="mobile-nav-link active">1. The Year of Momentum</a>
+      <a href="#geography" class="mobile-nav-link">2. Global Developer Community</a>
+      <a href="#industries" class="mobile-nav-link">3. Industries Building on GitHub</a>
+      <a href="#workflow" class="mobile-nav-link">4. AI and Agentic Development</a>
+      <a href="#models" class="mobile-nav-link">5. The Rise of Model Choice</a>
+      <a href="#languages" class="mobile-nav-link">6. Programming Languages</a>
+      <a href="#opensource" class="mobile-nav-link">7. Open Source at Scale & Methodology</a>
+    </nav>
+  </div>
+
+  <!-- Main Landmark Content Region -->
+  <main id="main-content" role="main">
+    <!-- Editorial Cover Hero (Phase 5) -->
+    <section class="cover-hero" id="cover-hero" aria-label="Octoverse 2026 Report Cover">
+      <!-- Top Decorative Geometric Band -->
+      <div class="cover-band cover-band-top" aria-hidden="true">
+        <img src="assets/images/hero-band-top.svg" alt="" class="cover-band-img" />
+      </div>
+
+      <!-- Main Editorial Cover Canvas -->
+      <div class="cover-canvas">
+        <!-- Subtle Repeated Background Typography: all together now -->
+        <div class="cover-bg-words" aria-hidden="true">
+          <span class="bg-word w-top-left">all together now</span>
+          <span class="bg-word w-top-right">all together now</span>
+          <span class="bg-word w-mid-left-1">together now</span>
+          <span class="bg-word w-mid-right-1">together now</span>
+          <span class="bg-word w-mid-left-2">all together</span>
+          <span class="bg-word w-mid-right-2">all together</span>
+          <span class="bg-word w-bottom-left-1">together now</span>
+          <span class="bg-word w-bottom-right-1">all together</span>
+          <span class="bg-word w-bottom-left-2">all together now</span>
+          <span class="bg-word w-bottom-right-2">all together now</span>
+        </div>
+
+        <div class="container cover-content">
+          <!-- Small Editorial Label with Flanking Lines -->
+          <div class="cover-eyebrow">
+            <span class="cover-eyebrow-line"></span>
+            <span class="cover-eyebrow-text">THE OFFICIAL GITHUB DEVELOPER ECOSYSTEM REPORT</span>
+            <span class="cover-eyebrow-line"></span>
+          </div>
+
+          <!-- Main Title with Prominent Invertocat Symbol -->
+          <div class="cover-title-group">
+            <svg class="cover-brand-icon" viewBox="0 0 98 96" width="58" height="58" aria-hidden="true">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="currentColor"/>
+            </svg>
+            <h1 class="cover-title">Octoverse 2026</h1>
+          </div>
+
+          <!-- Report Derived Description -->
+          <p class="cover-description">
+            A year of momentum, global collaboration, and AI-assisted software development.
+          </p>
+
+          <!-- Published Date with Calendar Icon -->
+          <div class="cover-published-date">
+            <i data-lucide="calendar" style="width: 14px; height: 14px;"></i>
+            <span>Published October 28, 2026</span>
+          </div>
+
+          <!-- Primary Call to Action Button -->
+          <a href="#momentum" class="cover-cta-btn" id="cover-explore-btn" role="button">
+            <span>Explore the report</span>
+            <i data-lucide="arrow-down" style="width: 15px; height: 15px;"></i>
+          </a>
+
+          <!-- Four-Item Overview Strip -->
+          <div class="cover-overview-strip" role="list">
+            <a href="#momentum" class="overview-strip-item" role="listitem">
+              <i data-lucide="book-open" class="overview-item-icon"></i>
+              <span>7 report chapters</span>
+            </a>
+            <span class="overview-strip-divider" aria-hidden="true"></span>
+            <a href="#geography" class="overview-strip-item" role="listitem">
+              <i data-lucide="globe" class="overview-item-icon"></i>
+              <span>Global developer community</span>
+            </a>
+            <span class="overview-strip-divider" aria-hidden="true"></span>
+            <a href="#momentum" class="overview-strip-item" role="listitem">
+              <i data-lucide="layers" class="overview-item-icon"></i>
+              <span>Platform activity</span>
+            </a>
+            <span class="overview-strip-divider" aria-hidden="true"></span>
+            <a href="#opensource" class="overview-strip-item" role="listitem">
+              <i data-lucide="code" class="overview-item-icon"></i>
+              <span>Open-source ecosystem</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Decorative Geometric Band -->
+      <div class="cover-band cover-band-bottom" aria-hidden="true">
+        <img src="assets/images/hero-band-bottom.svg" alt="" class="cover-band-img" />
+      </div>
+    </section>
+
+    <!-- SECTION 1: THE YEAR OF MOMENTUM -->
+    <section id="momentum" class="report-section">
+      <div class="container" id="section-1-container">
+        <!-- Rendered by section1-momentum.js -->
+      </div>
+    </section>
+
+    <!-- SECTION 2: GLOBAL DEVELOPER COMMUNITY -->
+    <section id="geography" class="report-section">
+      <div class="container" id="section-2-container">
+        <!-- Rendered by section2-geography.js -->
+      </div>
+    </section>
+
+    <!-- SECTION 3: INDUSTRIES BUILDING ON GITHUB -->
+    <section id="industries" class="report-section">
+      <div class="container" id="section-3-container">
+        <!-- Rendered by section3-industries.js -->
+      </div>
+    </section>
+
+    <!-- SECTION 4: AI AND AGENTIC DEVELOPMENT -->
+    <section id="workflow" class="report-section">
+      <div class="container" id="section-4-container">
+        <!-- Rendered by section4-workflow.js -->
+      </div>
+    </section>
+
+    <!-- SECTION 5: THE RISE OF MODEL CHOICE -->
+    <section id="models" class="report-section">
+      <div class="container" id="section-5-container">
+        <!-- Rendered by section5-models.js -->
+      </div>
+    </section>
+
+    <!-- SECTION 6: PROGRAMMING LANGUAGES -->
+    <section id="languages" class="report-section">
+      <div class="container" id="section-6-container">
+        <!-- Rendered by section6-languages.js -->
+      </div>
+    </section>
+
+    <!-- SECTION 7: OPEN SOURCE AT SCALE & METHODOLOGY -->
+    <section id="opensource" class="report-section">
+      <div class="container" id="section-7-container">
+        <!-- Rendered by section7-opensource.js -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand-col">
+          <div class="header-brand" style="margin-bottom: var(--space-1);">
+            <svg class="brand-icon" viewBox="0 0 98 96" width="20" height="20" aria-hidden="true">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="currentColor"/>
+            </svg>
+            <span>Octoverse 2026</span>
+          </div>
+          <p class="footer-tagline">
+            An interactive dashboard presenting the official GitHub Octoverse 2026 report published on October 28, 2026.
+          </p>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Core Chapters</div>
+          <ul class="footer-link-list">
+            <li><a href="#momentum">1. The Year of Momentum</a></li>
+            <li><a href="#geography">2. Global Community</a></li>
+            <li><a href="#industries">3. Industries Building</a></li>
+            <li><a href="#workflow">4. Agent Workflows</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Deep Dive</div>
+          <ul class="footer-link-list">
+            <li><a href="#models">5. Model Choice</a></li>
+            <li><a href="#languages">6. Programming Languages</a></li>
+            <li><a href="#opensource">7. Open Source &amp; Methodology</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Official Sources</div>
+          <ul class="footer-link-list">
+            <li><a href="https://github.blog/news-insights/octoverse/octoverse-2026/" target="_blank" rel="noopener noreferrer">GitHub Blog Report</a></li>
+            <li><a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub Platform</a></li>
+            <li><a href="https://github.blog" target="_blank" rel="noopener noreferrer">GitHub News &amp; Insights</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          Based entirely on the official GitHub Octoverse 2026 report. GitHub® is a registered trademark of GitHub, Inc.
+        </div>
+        <div>
+          Canonical Dataset Integration &bull; Dual Theme (Dark / Light) &bull; Zero Backend
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

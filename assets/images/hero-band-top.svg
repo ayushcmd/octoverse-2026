@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 72" preserveAspectRatio="none" width="100%" height="72">
+  <defs>
+    <!-- Plus symbol definition -->
+    <g id="orangePlus">
+      <rect x="-20" y="-7" width="40" height="14" rx="4" fill="#f0883e" />
+      <rect x="-7" y="-20" width="14" height="40" rx="4" fill="#f0883e" />
+    </g>
+  </defs>
+
+  <!-- Left Block: Mint green with orange plus -->
+  <rect x="0" y="0" width="160" height="72" fill="#7ee787" />
+  <use href="#orangePlus" x="80" y="36" />
+
+  <!-- Block 2: Lime green with yellow & orange organic curves -->
+  <rect x="160" y="0" width="320" height="72" fill="#56d364" />
+  <!-- Yellow corner curve -->
+  <path d="M 160 0 L 260 0 C 230 40, 190 65, 160 72 Z" fill="#f1e05a" />
+  <!-- Lime/yellow arch -->
+  <path d="M 280 72 C 320 20, 390 0, 480 0 L 480 72 Z" fill="#3fb950" />
+  <path d="M 360 72 C 390 35, 430 15, 480 10 L 480 72 Z" fill="#d29922" opacity="0.8" />
+
+  <!-- Block 3: Dark navy/black center block with pink matrix dots -->
+  <rect x="480" y="0" width="380" height="72" fill="#0d1117" />
+  <!-- 3 rows of punchy pink squares -->
+  <!-- Row 1 -->
+  <rect x="505" y="15" width="11" height="11" rx="2" fill="#f778ba" />
+  <rect x="545" y="15" width="11" height="11" rx="2" fill="#f778ba" />
+  <rect x="585" y="15" width="11" height="11" rx="2" fill="#f778ba" />
+  <rect x="625" y="15" width="11" height="11" rx="2" fill="#f778ba" />
+  <rect x="665" y="15" width="11" height="11" rx="2" fill="#f778ba" />
+  <rect x="705" y="15" width="11" height="11" rx="2" fill="#f778ba" />
+  <rect x="745" y="15" width="11" height="11" rx="2" fill="#f778ba" />
+  <rect x="785" y="15" width="11" height="11" rx="2" fill="#f778ba" />
+  <rect x="825" y="15" width="11" height="11" rx="2" fill="#f778ba" />
+  <!-- Row 2 (staggered) -->
+  <rect x="525" y="31" width="11" height="11" rx="2" fill="#f778ba" />
+  <rect x="565" y="31" width="11" height="11" rx="2" fill="#f778ba" />
+  <rect x="605" y="31" width="11" height="11" rx="2" fill="#f778ba" />
+  <rect x="645" y="31" width="11" height="11" rx="2" fill="#f778ba" />
+  <rect x="685" y="31" width="11" height="11" rx="2" fill="#f778ba" />
+  <rect x="725" y="31" width="11" height="11" rx="2" fill="#f778ba" />
+  <rect x="765" y="31" width="11" height="11" rx="2" fill="#f778ba" />
+  <rect x="805" y="31" width="11" height="11" rx="2" fill="#f778ba" />
+  <!-- Row 3 -->
+  <rect x="505" y="47" width="11" height="11" rx="2" fill="#f778ba" />
+  <rect x="545" y="47" width="11" height="11" rx="2" fill="#f778ba" />
+  <rect x="585" y="47" width="11" height="11" rx="2" fill="#f778ba" />
+  <rect x="625" y="47" width="11" height="11" rx="2" fill="#f778ba" />
+  <rect x="665" y="47" width="11" height="11" rx="2" fill="#f778ba" />
+  <rect x="705" y="47" width="11" height="11" rx="2" fill="#f778ba" />
+  <rect x="745" y="47" width="11" height="11" rx="2" fill="#f778ba" />
+  <rect x="785" y="47" width="11" height="11" rx="2" fill="#f778ba" />
+  <rect x="825" y="47" width="11" height="11" rx="2" fill="#f778ba" />
+
+  <!-- Block 4: Yellow with purple & orange sweeping arcs -->
+  <rect x="860" y="0" width="340" height="72" fill="#f1e05a" />
+  <!-- Purple curved sector -->
+  <path d="M 860 0 C 920 20, 970 50, 1020 72 L 860 72 Z" fill="#8957e5" />
+  <!-- Orange sweeping quadrant -->
+  <path d="M 1200 72 C 1080 72, 980 40, 960 0 L 1200 0 Z" fill="#f0883e" />
+  <path d="M 1200 72 C 1120 72, 1060 50, 1040 0 L 1200 0 Z" fill="#d29922" opacity="0.6" />
+</svg>

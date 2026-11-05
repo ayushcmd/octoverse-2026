@@ -1,0 +1,70 @@
+[
+  {
+    "chart_id": "platform-yearly-activity",
+    "topic": "platform_activity",
+    "recommended": "grouped bar charts",
+    "data_ids_prefixes": [
+      "activity-pushes-",
+      "activity-commits-",
+      "activity-github-actions-jobs-",
+      "activity-merged-pull-requests-"
+    ],
+    "caution": "Each year is the 12 months ending September 30; public and private repositories."
+  },
+  {
+    "chart_id": "activity-index",
+    "topic": "activity_trend",
+    "recommended": "multi-series line chart",
+    "data_ids_prefixes": [
+      "indexed-"
+    ],
+    "caution": "September 2025 baseline equals 1x; some values are approximate."
+  },
+  {
+    "chart_id": "country-developers",
+    "topic": "global_developers",
+    "recommended": "ranked horizontal bar or choropleth",
+    "data_ids_prefixes": [
+      "developers-country-"
+    ],
+    "caution": "Only countries with source-supported exact values are present."
+  },
+  {
+    "chart_id": "agent-pr-comparison",
+    "topic": "ai_workflows",
+    "recommended": "grouped bar chart",
+    "data_ids_prefixes": [
+      "pr-comparison-"
+    ],
+    "caution": "Keep agent-authored and without-detected-agent groups distinct."
+  },
+  {
+    "chart_id": "model-request-mix",
+    "topic": "model_choice",
+    "recommended": "donut or stacked bar",
+    "data_ids_prefixes": [
+      "model-general-purpose-share",
+      "model-deep-reasoning-share",
+      "model-fast-lightweight-share"
+    ],
+    "caution": "Developer-selected requests only; excludes auto model selection."
+  },
+  {
+    "chart_id": "language-forecast",
+    "topic": "programming_languages",
+    "recommended": "forecast line chart",
+    "data_ids_prefixes": [
+      "language-forecast-"
+    ],
+    "caution": "Exact forecast values available here only for TypeScript, Python, JavaScript."
+  },
+  {
+    "chart_id": "opensource-rankings",
+    "topic": "open_source_rankings",
+    "recommended": "ranked tables",
+    "data_ids_prefixes": [
+      "opensource-"
+    ],
+    "caution": "Separate fastest-growing from most-engaged and community from vendor/product-led."
+  }
+]

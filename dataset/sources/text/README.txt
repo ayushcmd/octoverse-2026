@@ -1,0 +1,1 @@
+workspace-inspection-note.txt is a project architecture/workspace inspection note, not the official GitHub Octoverse report. It is retained for provenance only and must not be used as evidence for report findings.

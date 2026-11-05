@@ -1,0 +1,22 @@
+{
+  "record_count": 186,
+  "image_asset_count": 22,
+  "topics": [
+    "activity_trend",
+    "ai_workflows",
+    "developer_activity",
+    "developer_forecasts",
+    "global_developers",
+    "industries",
+    "methodology",
+    "model_choice",
+    "open_source_rankings",
+    "platform_activity",
+    "programming_languages"
+  ],
+  "notes": [
+    "Dataset is a structured transcription, not an official GitHub data dump.",
+    "Some chart series remain unpopulated where exact values were not supplied or legible.",
+    "All original supplied image assets are included without modification."
+  ]
+}

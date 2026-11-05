@@ -1,0 +1,95 @@
+[
+  {
+    "source_id": "official-report-text",
+    "source_type": "report text supplied in conversation",
+    "title": "GitHub Octoverse 2026 report text",
+    "source_owner": "GitHub",
+    "source_date": "2026-10-28",
+    "file_path": null,
+    "notes": "Primary text source provided in the conversation. This package captures available facts in normalized form; retain the original report text alongside this package for complete prose context."
+  },
+  {
+    "source_id": "visual-activity-2024-2026",
+    "source_type": "official report graphic",
+    "title": "The year of momentum \u2014 pushes, commits, Actions jobs, merged pull requests",
+    "file_path": "sources/images/Octoverse2026_BlogVisual_1.webp"
+  },
+  {
+    "source_id": "visual-activity-indexed",
+    "source_type": "official report graphic",
+    "title": "GitHub activity accelerated through 2026",
+    "file_path": "sources/images/Octoverse2026_BlogSpotlight_2.webp"
+  },
+  {
+    "source_id": "spotlight-actions",
+    "source_type": "official report graphic",
+    "title": "GitHub Actions jobs run rate",
+    "file_path": "sources/images/Octoverse2026_BlogSpotlight_1.webp"
+  },
+  {
+    "source_id": "spotlight-agent-pr",
+    "source_type": "official report graphic",
+    "title": "Agent-started pull requests",
+    "file_path": "sources/images/Octoverse2026_BlogSpotlight_3.webp"
+  },
+  {
+    "source_id": "visual-agent-pr-comparison",
+    "source_type": "official report graphic",
+    "title": "Agent-authored pull request comparison",
+    "file_path": "sources/images/Octoverse2026_BlogSpotlight_4.webp"
+  },
+  {
+    "source_id": "spotlight-model-choice",
+    "source_type": "official report graphic",
+    "title": "Model choice and diversity",
+    "file_path": "sources/images/Octoverse2026_BlogSpotlight_5.webp"
+  },
+  {
+    "source_id": "spotlight-auto-model",
+    "source_type": "official report graphic",
+    "title": "Auto model selection",
+    "file_path": "sources/images/Octoverse2026_BlogSpotlight_6.webp"
+  },
+  {
+    "source_id": "spotlight-interoperability",
+    "source_type": "official report graphic",
+    "title": "Interoperability and reverse engineering repository growth",
+    "file_path": "sources/images/Octoverse2026_BlogSpotlight_7.webp"
+  },
+  {
+    "source_id": "visual-country-developer-counts",
+    "source_type": "official report graphic/screenshot",
+    "title": "Developer counts by country",
+    "file_path": "sources/images/image(20261104-134838).png"
+  },
+  {
+    "source_id": "visual-language-forecast",
+    "source_type": "official report graphic",
+    "title": "The top languages, a year ahead",
+    "file_path": "sources/images/Octoverse2026_BlogVisual_8.webp"
+  },
+  {
+    "source_id": "visual-opensource-rankings",
+    "source_type": "official report graphic/screenshot",
+    "title": "Fastest-growing and most-engaged open-source repositories",
+    "file_path": "sources/images/image(20261104-135027).png"
+  },
+  {
+    "source_id": "visual-industry-ai",
+    "source_type": "official report graphic",
+    "title": "AI reaches every industry",
+    "file_path": "sources/images/Octoverse2026_BlogVisual_6.webp"
+  },
+  {
+    "source_id": "visual-language-growth",
+    "source_type": "official report graphic",
+    "title": "Language community growth",
+    "file_path": "sources/images/Octoverse2026_BlogVisual_4.webp"
+  },
+  {
+    "source_id": "visual-language-ai",
+    "source_type": "official report graphic",
+    "title": "Faster-growing languages see more AI-merged PRs",
+    "file_path": "sources/images/Octoverse2026_BlogVisual_4.webp"
+  }
+]

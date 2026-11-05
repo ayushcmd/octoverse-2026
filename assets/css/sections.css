@@ -1,0 +1,179 @@
+/**
+ * GitHub Octoverse 2026 - Section Specific Layouts & Scaffolding
+ * Individual chapter rhythms, asymmetric grids, and editorial highlights.
+ */
+
+/* ==========================================================================
+   COMMON EDITORIAL CALLOUTS
+   ========================================================================== */
+.editorial-callout {
+  background-color: var(--glass-card);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-sm), var(--glass-highlight);
+  border-radius: var(--radius-xl);
+  padding: var(--space-5) var(--space-6);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  position: relative;
+  overflow: hidden;
+}
+
+.editorial-callout::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background-color: var(--color-blue);
+}
+
+.callout-text h4 {
+  margin-bottom: var(--space-1);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.callout-text p {
+  font-size: var(--text-xs);
+  line-height: var(--leading-relaxed);
+  max-width: 820px;
+}
+
+/* ==========================================================================
+   SECTION 1: THE YEAR OF MOMENTUM
+   ========================================================================== */
+#momentum .kpi-cluster {
+  margin-bottom: var(--space-6);
+}
+
+/* ==========================================================================
+   SECTION 2: DEVELOPERS ARE BUILDING EVERYWHERE
+   ========================================================================== */
+#geography .country-rank-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+/* ==========================================================================
+   SECTION 3: THE FUTURE IS BEING BUILT EVERYWHERE (INDUSTRIES)
+   ========================================================================== */
+.industry-insight-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  position: relative;
+  transition: border-color var(--transition-fast);
+}
+
+.industry-insight-card:hover {
+  border-color: var(--border-emphasis);
+}
+
+/* ==========================================================================
+   SECTION 4: DEVELOPERS ARE RESHAPING THEIR WORKFLOW
+   ========================================================================== */
+.workflow-metric-strip {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+/* ==========================================================================
+   SECTION 5: THE RISE OF MODEL CHOICE
+   ========================================================================== */
+.model-tier-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  position: relative;
+  transition: border-color var(--transition-fast);
+}
+
+.model-tier-card:hover {
+  border-color: var(--border-emphasis);
+}
+
+.model-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-1);
+}
+
+.model-tag {
+  font-size: var(--text-2xs);
+  font-family: var(--font-mono);
+  padding: 2px 7px;
+  background-color: var(--bg-canvas);
+  border: 1px solid var(--border-muted);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+}
+
+/* ==========================================================================
+   SECTION 6: PROGRAMMING LANGUAGES
+   ========================================================================== */
+.lang-badge-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  margin-right: 4px;
+}
+
+/* ==========================================================================
+   SECTION 7: METHODOLOGY & GLOSSARY
+   ========================================================================== */
+.methodology-card {
+  background-color: var(--glass-card);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-sm), var(--glass-highlight);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+}
+
+.glossary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-4);
+  margin-top: var(--space-5);
+}
+
+.glossary-item {
+  padding: var(--space-3) var(--space-4);
+  background-color: var(--bg-surface);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-muted);
+}
+
+.glossary-term {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: var(--font-bold);
+  color: var(--color-blue);
+  margin-bottom: 2px;
+}
+
+.glossary-def {
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+  line-height: var(--leading-normal);
+}
