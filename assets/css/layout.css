@@ -477,6 +477,80 @@
   display: inline-block;
 }
 
+/* Personal GitHub Insights CTA, directly below the overview strip */
+.insights-cta {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-5);
+  width: min(100%, 370px);
+  margin-top: var(--space-2);
+  padding: 14px 16px 14px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.52);
+  border-radius: var(--radius-xl);
+  background:
+    radial-gradient(ellipse 70% 150% at 5% 120%, rgba(255, 255, 255, 0.26) 0%, transparent 72%),
+    radial-gradient(ellipse 58% 135% at 102% -25%, rgba(255, 255, 255, 0.2) 0%, transparent 70%),
+    linear-gradient(112deg, #f2d55f 0%, #79d88e 50%, #ed83b7 100%);
+  box-shadow: 0 8px 22px rgba(103, 139, 89, 0.2), 0 3px 9px rgba(0, 0, 0, 0.16);
+  color: #1f2328;
+  text-align: left;
+  text-decoration: none;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal), filter var(--transition-normal);
+}
+
+.insights-cta:hover {
+  color: #1f2328;
+  text-decoration: none;
+  filter: saturate(1.08) brightness(1.025);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(103, 139, 89, 0.28), 0 5px 12px rgba(0, 0, 0, 0.2);
+}
+
+.insights-cta:focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 4px;
+}
+
+.insights-cta-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.insights-cta-copy strong {
+  font-size: clamp(0.95rem, 2vw, 1.08rem);
+  font-weight: 750;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+.insights-cta-copy > span {
+  color: rgba(31, 35, 40, 0.8);
+  font-size: var(--text-xs);
+  line-height: var(--leading-normal);
+}
+
+.insights-cta-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  flex: 0 0 36px;
+  border: 1px solid rgba(31, 35, 40, 0.2);
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.24);
+  transition: transform var(--transition-normal), background-color var(--transition-normal);
+  color: #1f2328;
+}
+
+.insights-cta:hover .insights-cta-arrow {
+  transform: translateX(4px);
+  background: rgba(255, 255, 255, 0.42);
+}
+
 /* Responsive Breakpoints for Editorial Cover Hero */
 @media (max-width: 900px) {
   .cover-bg-words .bg-word {
@@ -527,6 +601,10 @@
     grid-template-columns: 1fr;
     text-align: center;
   }
+  .insights-cta {
+    width: min(100%, 370px);
+    padding: 13px 14px 13px 17px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -536,6 +614,14 @@
   }
   .overview-strip-item {
     transition: none;
+  }
+  .insights-cta,
+  .insights-cta-arrow {
+    transition: none;
+  }
+  .insights-cta:hover,
+  .insights-cta:hover .insights-cta-arrow {
+    transform: none;
   }
 }
 
